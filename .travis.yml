@@ -1,0 +1,47 @@
+
+language: bash
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y shellcheck
+  - sudo apt-get install imagemagick
+  - sudo apt-get install p7zip-full
+  - sudo apt-get install ghostscript
+  - ls -l
+script:
+  - cd task/
+  - cd code/
+  - echo "已进入指定文件夹"
+  - bash task02.sh -w
+  - bash task03.sh -w
+  - ls -l
+  - echo Task01
+  - bash task01.sh -h
+  - bash task01.sh -R 50
+  - bash task01.sh -r 50%
+  - bash task01.sh -a 50 taozi
+  - bash task01.sh -add_1 A
+  - bash task01.sh -add_2 a
+  - bash task01.sh -c
+  - ls -l
+  - echo "=============================="
+  - echo Task02
+  - bash task02.sh -h
+  - bash task02.sh -s 
+  - bash task02.sh -p 
+  - bash task02.sh -n 
+  - bash task02.sh -a 
+  - echo "=============================="
+  - echo Task03
+  - bash task03.sh -h
+  - bash task03.sh -a
+  - bash task03.sh -b
+  - bash task03.sh -c
+  - bash task03.sh -d 
+  - bash task03.sh -e
+  - bash task03.sh -f /images/NASA-logosmall.gif
+  - shellcheck task01.sh
+  - shellcheck task02.sh
+  - shellcheck task03.sh
+notifications:
+  email:
+    2543960380@qq.com taozi
